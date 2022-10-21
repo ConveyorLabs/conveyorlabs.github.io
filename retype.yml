@@ -2,7 +2,7 @@ input: ./docs
 output: .retype
 url: docs.conveyor.finance
 branding:
-  title: Project Name
+  title: Conveyor Finance
   label: Docs
 links:
 - text: Docs
