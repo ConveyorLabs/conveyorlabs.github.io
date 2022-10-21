@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>The Beacon Network</title>
-    <meta name="title" content="The Beacon Network">
-    <meta name="description" content="The Beacon is a decentralized, open-source, and highly optimized program that acts as the backbone of the Conveyor ecosystem." />
+    <title>Risk Mititgation</title>
+    <meta name="title" content="Risk Mititgation">
+    <meta name="description" content="Several implementations and design decisions were made to create a system that benefits users of the protocols, as well as those who host an..." />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.conveyor.finance/thebeaconnetwork/" />
+    <link rel="canonical" href="https://docs.conveyor.finance/riskmitigation/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.conveyor.finance/thebeaconnetwork/">
-    <meta property="og:title" content="The Beacon Network">
-    <meta property="og:description" content="The Beacon is a decentralized, open-source, and highly optimized program that acts as the backbone of the Conveyor ecosystem.">
+    <meta property="og:url" content="https://docs.conveyor.finance/riskmitigation/">
+    <meta property="og:title" content="Risk Mititgation">
+    <meta property="og:description" content="Several implementations and design decisions were made to create a system that benefits users of the protocols, as well as those who host an...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.conveyor.finance/thebeaconnetwork/">
-    <meta property="twitter:title" content="The Beacon Network">
-    <meta property="twitter:description" content="The Beacon is a decentralized, open-source, and highly optimized program that acts as the backbone of the Conveyor ecosystem.">
+    <meta property="twitter:url" content="https://docs.conveyor.finance/riskmitigation/">
+    <meta property="twitter:title" content="Risk Mititgation">
+    <meta property="twitter:description" content="Several implementations and design decisions were made to create a system that benefits users of the protocols, as well as those who host an...">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -166,31 +166,31 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="the-beacon-network" class="break-words">
+<doc-anchor-target id="risk-mititgation" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-beacon-network">#</doc-anchor-trigger>
-        <span>The Beacon Network</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#risk-mititgation">#</doc-anchor-trigger>
+        <span>Risk Mititgation</span>
     </h1>
 </doc-anchor-target>
-<p>The Beacon is a decentralized, open-source, and highly optimized program that acts as the backbone of the Conveyor ecosystem. Each Beacon in the network monitors on-chain state changes in Conveyor contracts, receiving a reward for each transaction that it successfully completes. The Conveyor ecosystem is fully permissionless, meaning that Beacons compete amongst each other to execute transactions faster than their peers, which ensures that orders are guaranteed and executed as fast as possible. Through the Beacon network, Conveyor is able to enable trustless, fully decentralized contract automation for decentralized finance.</p>
-<doc-anchor-target id="how-it-works">
+<p>Several implementations and design decisions were made to create a system that benefits users of the protocols, as well as those who host an off-chain Beacon application.</p>
+<doc-anchor-target id="flash-loan-attacks">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-it-works">#</doc-anchor-trigger>
-        <span>How it works</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#flash-loan-attacks">#</doc-anchor-trigger>
+        <span>Flash Loan Attacks</span>
     </h2>
 </doc-anchor-target>
-<p>The Beacon works by listening to on-chain state changes in the Conveyor Limit Order contract to keep track of all existing limit orders. Simultaneously, the Beacon listens to corresponding liquidity pools to keep track of price changes and know when to execute a limit order. All order execution is verified on-chain, meaning that a limit order will only execute when the price, order quantity, and all other necessary conditions are met on chain (conditions for order execution are discussed in detail in the Limit Orders section of the whitepaper). Beacons listen for events emitted from the Limit Order contract to update their local state whenever any order is placed, updated, canceled, or executed. When an active limit order hits its execution price, Beacons race to call the contract, with a reward going to the Beacon that successfully completes the transaction. This creates a financial incentive to support the Conveyor system, which ensures competition throughout the Beacon network. This competition creates a strong Beacon network, ensuring that limit orders are executed as fast as possible.</p>
-<doc-anchor-target id="accessibility">
+<p>Flash loan attacks on our user base pose a significant threat to the protocol by bad actors in the beacon network. Traditional DeFi automation networks such as The Gelato Network have an internal executor network to call the execution functions of the on-chain logic. The Conveyor beacon network is completely democratized, allowing anyone to spin up a beacon client and start executing incoming orders in the queue. The reason why most other well-known DeFi automation protocols keep their executor network internal is because of the risk of bad actors in the beacon network. Since the beacon network will be reaping the rewards of execution on the transactions in the queue, it is possible for a beacon to manipulate the spot price in a liquidity pool to drive the price to the execution trigger for a batch of transactions to execute, in such cases where the execution reward is significantly large.</p>
+<p>The Conveyor protocol has deeply analyzed this problem, and mathematically formulated a model on when such an attack will be profitable. Our protocol&#x27;s beacon reward is analytically determined with flash loan attacks in mind and is hard-capped at the exact value that would make such an attack profitable. Meaning, a beacon could take out a flash loan to manipulate the price of an lp to the execution trigger for a batch of transactions and at best will be breaking even - the gas accumulated in the transaction. Alternatively, the beacon could simply play by the rules and reap the max execution reward getting a net-positive return.</p>
+<p>The overall philosophy of the Conveyor protocol has been to mechanistically design the system in such a way that the most profitable way to use the platform is also the correct way to use the platform, and flash loan attack prevention has been mechanistically designed into the system to be unprofitable so attempting such attacks will invariably lose money for bad actors in the network.</p>
+<doc-anchor-target id="contract-security">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#accessibility">#</doc-anchor-trigger>
-        <span>Accessibility</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contract-security">#</doc-anchor-trigger>
+        <span>Contract Security</span>
     </h2>
 </doc-anchor-target>
-<p>The Beacon is fully open-sourced, compact, and extremely easy to install. Accessibility strengthens decentralization, and we wanted the Beacon to be accessible to anyone. While some protocols that offer automation either close source their off-chain logic or centralize their protocol so that only trusted nodes can call their contract, we decided to design the system in a way that the more Beacons there are, the stronger the network becomes.
-Downloading the Beacon is as easy as one command in the terminal and setup takes less than 5 minutes.</p>
-<p>The Beacon is built in GoLang and is compatible with almost any operating system/architecture. Additionally, you can supply any RPC endpoint to the Beacon. One point to note is that the Beacon network is competitive, so having a computer with higher performance as well as a local node will give a Beacon operator the greatest advantage.</p>
-<p>Running a Beacon
-Instructions on how to download/run a Beacon are coming soon.</p>
+<p>The conveyor contract has been designed with security as the top priority. Our engineers have designed a custom EOA library to further strengthen the security of our execution function from external contract calls. This library protects against sophisticated ghost contract calls which several modern protocols which only check the code size of the caller are still vulnerable to.
+The Conveyor contract will be audited by QuantStamp prior to our protocol launch to ensure a deep level of security and professional oversight to our userbase.</p>
+<p>Although we have made deep mechanistic design decisions to prevent flash loan attacks on the liquidity pools to trigger order executions. We further implement price oracles as secondary price indicators alongside the liquidity pool spot prices based on reserve size. This is to have redundancy in our execution price triggers in order to prevent execution on a manipulated spot price in a liquidity pool. For example, if a user on our platform places a limit sell order and a bad actor takes out a flash loan in the respective lp to depreciate the spot price to the execution trigger. Our contract will not execute as the oracle price will conflict with the liquidity pool price. So, our userbase can feel safer when trading in volatile liquidity pools that their orders will not execute on atomic manipulated price data in the liquidity pools.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -200,16 +200,23 @@ Instructions on how to download/run a Beacon are coming soon.</p>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../riskmitigation/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../gascredits/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Risk Mitigation</span>
+                                                <span class="block mt-1">Gas Credits</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../thebeaconnetwork/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">The Beacon Network</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -250,6 +257,6 @@ Instructions on how to download/run a Beacon are coming soon.</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "The Beacon Network", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Risk Mitigation", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>

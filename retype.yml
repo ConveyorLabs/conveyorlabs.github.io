@@ -3,9 +3,19 @@ output: .retype
 url: docs.conveyor.finance
 branding:
   title: Conveyor Finance
-  label: Docs
+  logo: assets/svg/logoDark.svg
 links:
-- text: Docs
-  link: /
+- text: Home
+  link: https://conveyor.finance
+  icon: home
+- text: Trading App
+  link: https://conveyor.finance/app
+  icon: arrow-switch
+- text: Github
+  link: https://github.com/conveyorlabs
+  icon: mark-github
+- text: Discord
+  link: https://stuff.com
+  icon: comment-discussion
 footer:
   copyright: "&copy; Copyright {{ year }} - [Conveyor Labs](https://conveyorlabs.org) - All rights reserved."

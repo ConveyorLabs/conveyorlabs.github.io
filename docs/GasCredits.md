@@ -1,3 +1,8 @@
+---
+icon: flame
+label: Gas Credits
+---
+
 # Gas Credits
 
 ## Overview
