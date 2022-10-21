@@ -6,6 +6,6 @@ branding:
   label: Docs
 links:
 - text: Docs
-  link: /docs
+  link: /
 footer:
-  copyright: "&copy; Copyright {{ year }}. All rights reserved."
+  copyright: "&copy; Copyright {{ year }} - [Conveyor Labs](https://conveyorlabs.org) - All rights reserved."
