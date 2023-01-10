@@ -1,3 +1,8 @@
+---
+label: Decentralized
+icon: check
+---
+
 # 100% Decentralized
 
 Decentralization is a crucial component in DeFi protocols in order to shift the control of a system from one main group (Conveyor Finance) to a system completely controlled by the general public. This gives more power to the individuals by offering a reproducible, predictable, and verifiable method to ensure funds are stored, transacted, and automated in the most efficient and safest way possible.

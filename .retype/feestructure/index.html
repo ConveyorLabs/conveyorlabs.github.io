@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.719686505090">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.726695012354">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Fee Structure</title>
     <meta name="title" content="Fee Structure">
-    <meta name="description" content="The base user fee for autonomous trade execution by the beacon network is a dynamic price curve ranging from 0.5%-0." />
+    <meta name="description" content="The base user fee for autonomous trade execution by the COEX network is a dynamic price curve ranging from 0.5%-0." />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.conveyor.finance/feestructure/" />
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.conveyor.finance/feestructure/">
     <meta property="og:title" content="Fee Structure">
-    <meta property="og:description" content="The base user fee for autonomous trade execution by the beacon network is a dynamic price curve ranging from 0.5%-0.">
+    <meta property="og:description" content="The base user fee for autonomous trade execution by the COEX network is a dynamic price curve ranging from 0.5%-0.">
     <meta property="og:image" content="https://docs.conveyor.finance/assets/png/feegraph.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.conveyor.finance/feestructure/">
     <meta property="twitter:title" content="Fee Structure">
-    <meta property="twitter:description" content="The base user fee for autonomous trade execution by the beacon network is a dynamic price curve ranging from 0.5%-0.">
+    <meta property="twitter:description" content="The base user fee for autonomous trade execution by the COEX network is a dynamic price curve ranging from 0.5%-0.">
     <meta property="twitter:image" content="https://docs.conveyor.finance/assets/png/feegraph.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=2.4.0.719686505090" rel="stylesheet" />
+    <link href="../resources/css/retype.css?v=2.4.0.726695012354" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.719686505090" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.726695012354" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.719686505090" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.726695012354" data-turbo-eval="false" defer></script>
     <link href="../resources/css/katex.css?v=2.4.0" rel="stylesheet" />
     <script id="katex-js" type="text/javascript" src="../resources/js/katex.js?v=2.4.0" defer></script>
 </head>
@@ -54,8 +54,12 @@
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../assets/svg/logodark.svg">
+                                <img class="max-h-10 hidden dark:inline-block" src="../assets/svg/logodark.svg">
+                            </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Conveyor Finance</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                        </a>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -66,7 +70,44 @@
                     <nav class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../">Docs</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://conveyor.finance">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path fill-rule="evenodd" d="M11.03 2.59a1.5 1.5 0 011.94 0l7.5 6.363a1.5 1.5 0 01.53 1.144V19.5a1.5 1.5 0 01-1.5 1.5h-5.75a.75.75 0 01-.75-.75V14h-2v6.25a.75.75 0 01-.75.75H4.5A1.5 1.5 0 013 19.5v-9.403c0-.44.194-.859.53-1.144l7.5-6.363zM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v6.25h5v-9.403L12 3.734z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://conveyor.finance/app">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M7.72 21.78a.75.75 0 001.06-1.06L5.56 17.5h14.69a.75.75 0 000-1.5H5.56l3.22-3.22a.75.75 0 10-1.06-1.06l-4.5 4.5a.75.75 0 000 1.06l4.5 4.5zm8.56-9.5a.75.75 0 11-1.06-1.06L18.44 8H3.75a.75.75 0 010-1.5h14.69l-3.22-3.22a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Trading App</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/conveyorlabs">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" />
+                                        </g>
+                                    </svg>
+                                    <span>Github</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://stuff.com">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path fill-rule="evenodd" d="M1.75 1A1.75 1.75 0 000 2.75v9.5C0 13.216.784 14 1.75 14H3v1.543a1.457 1.457 0 002.487 1.03L8.061 14h6.189A1.75 1.75 0 0016 12.25v-9.5A1.75 1.75 0 0014.25 1H1.75zM1.5 2.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v9.5a.25.25 0 01-.25.25h-6.5a.75.75 0 00-.53.22L4.5 15.44v-2.19a.75.75 0 00-.75-.75h-2a.25.25 0 01-.25-.25v-9.5z"/><path d="M22.5 8.75a.25.25 0 00-.25-.25h-3.5a.75.75 0 010-1.5h3.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0122.25 20H21v1.543a1.457 1.457 0 01-2.487 1.03L15.939 20H10.75A1.75 1.75 0 019 18.25v-1.465a.75.75 0 011.5 0v1.465c0 .138.112.25.25.25h5.5a.75.75 0 01.53.22l2.72 2.72v-2.19a.75.75 0 01.75-.75h2a.25.25 0 00.25-.25v-9.5z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Discord</span>
+                                </a>
                             </li>
         
                         </ul>
@@ -145,7 +186,44 @@
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../">Docs</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://conveyor.finance">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M11.03 2.59a1.5 1.5 0 011.94 0l7.5 6.363a1.5 1.5 0 01.53 1.144V19.5a1.5 1.5 0 01-1.5 1.5h-5.75a.75.75 0 01-.75-.75V14h-2v6.25a.75.75 0 01-.75.75H4.5A1.5 1.5 0 013 19.5v-9.403c0-.44.194-.859.53-1.144l7.5-6.363zM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 01.75-.75h3.5a.75.75 0 01.75.75v6.25h5v-9.403L12 3.734z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://conveyor.finance/app">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M7.72 21.78a.75.75 0 001.06-1.06L5.56 17.5h14.69a.75.75 0 000-1.5H5.56l3.22-3.22a.75.75 0 10-1.06-1.06l-4.5 4.5a.75.75 0 000 1.06l4.5 4.5zm8.56-9.5a.75.75 0 11-1.06-1.06L18.44 8H3.75a.75.75 0 010-1.5h14.69l-3.22-3.22a.75.75 0 011.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Trading App</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/conveyorlabs">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" />
+                                                </g>
+                                            </svg>
+                                            <span>Github</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://stuff.com">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M1.75 1A1.75 1.75 0 000 2.75v9.5C0 13.216.784 14 1.75 14H3v1.543a1.457 1.457 0 002.487 1.03L8.061 14h6.189A1.75 1.75 0 0016 12.25v-9.5A1.75 1.75 0 0014.25 1H1.75zM1.5 2.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v9.5a.25.25 0 01-.25.25h-6.5a.75.75 0 00-.53.22L4.5 15.44v-2.19a.75.75 0 00-.75-.75h-2a.25.25 0 01-.25-.25v-9.5z"/><path d="M22.5 8.75a.25.25 0 00-.25-.25h-3.5a.75.75 0 010-1.5h3.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0122.25 20H21v1.543a1.457 1.457 0 01-2.487 1.03L15.939 20H10.75A1.75 1.75 0 019 18.25v-1.465a.75.75 0 011.5 0v1.465c0 .138.112.25.25.25h5.5a.75.75 0 01.53.22l2.72 2.72v-2.19a.75.75 0 01.75-.75h2a.25.25 0 00.25-.25v-9.5z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Discord</span>
+                                        </a>
                                     </li>
             
                                 </ul>
@@ -182,8 +260,8 @@
         <span>Base Fee Motivation/Overview</span>
     </h2>
 </doc-anchor-target>
-<p>The base user fee for autonomous trade execution by the beacon network is a dynamic price curve ranging from 0.5%-0.1% of the user&#x27;s total transaction size. This fee is used to compensate the beacon for the execution of the transaction on the user&#x27;s behalf. The base free shrinks at a proportional rate to the size of the transaction meaning smaller transactions will be closer to 0.5% while large transactions will dynamically approach 0.1%. This fee is chosen to facilitate a fair and thriving ecosystem that is overall beneficial to our userbase and the beacon network as a whole.</p>
-<p>The base fee is used to compensate the beacon for executing the transactions on the user&#x27;s behalf. The fee is modeled after a modified logistic function. Formally our fee structure is based on the calculation below:</p>
+<p>The base user fee for autonomous trade execution by the COEX network is a dynamic price curve ranging from 0.5%-0.1% of the user&#x27;s total transaction size. This fee is used to compensate the COEX for the execution of the transaction on the user&#x27;s behalf. The base free shrinks at a proportional rate to the size of the transaction meaning smaller transactions will be closer to 0.5% while large transactions will dynamically approach 0.1%. This fee is chosen to facilitate a fair and thriving ecosystem that is overall beneficial to our userbase and the COEX network as a whole.</p>
+<p>The base fee is used to compensate the COEX for executing the transactions on the user&#x27;s behalf. The fee is modeled after a modified logistic function. Formally our fee structure is based on the calculation below:</p>
 <div class="math"><pre>f(x)=(.9/(1.25+e^{\left(\frac{x}{75000}\right)}))+0.1</pre></div>
 <br/>
 <p>​This function is mathematically capped at a .5% base fee, which dynamically decreases down to a minimum of 0.1%. The benefits of a constant function allow for higher gas optimizations by reducing conditionals in the contract by means of a stepper system. Fees are calculated by the post-swap value, rather than the pre-swap value. This is to account for possible tokenomic tax many DeFi tokens implement. A visual representation of the above formula can be seen below:</p>
@@ -217,38 +295,38 @@
 A $100,000 trade will have a 0.27% fee = ~$278 <br>
 A $500,000 trade will have a 0.10% fee = ~$506 <br></p>
 </blockquote>
-<doc-anchor-target id="beacon-reward">
+<doc-anchor-target id="coex-reward">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#beacon-reward">#</doc-anchor-trigger>
-        <span>Beacon Reward</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#coex-reward">#</doc-anchor-trigger>
+        <span>COEX Reward</span>
     </h2>
 </doc-anchor-target>
-<p>A subtle, but integral aspect of our fee structure that was chosen with regards to overall protocol security is the beacon reward. The beacon reward is critically important when considering the possibility of flash loan attacks on the liquidity pools through which the beacon will be executing the transactions. Since the beacon will have visibility over the pending transactions in the queue and know the execution prices of these transactions, it is important to have a mechanistic way of protecting our user base from bad actors in the beacon network. We want to ensure a fair beacon reward for execution while concurrently guaranteeing our user&#x27;s protection from the possibility of beacons executing profitable flash loan attacks on liquidity pools to manipulate the spot price to reap the rewards of execution.
-The beacon reward regarding the fee has been rigorously determined based on principles of conservation functions used in the liquidity pools our users will be interacting with. In order to determine the optimal beacon reward we formulated objective models on the price impact in liquidity pools based on transaction size, formally we determined the relationship between large swap transactions in correspondence with reserve size to determine a formal model of the potential exploitability of the Conveyor Contract from bad actor beacons on our user base.
-By analytically determining the relationship between swap size and price impact based on reserve size in the liquidity pools we are able to in real-time calculate the exact threshold amount that a beacon could receive in one execution reward that would make such an attack profitable on the basis of price manipulation in the liquidity pool. We ensure to our user base the unprofitability of such attacks by putting a hard cap on the beacon reward that can be received in one execution to facilitate an ecosystem that rewards playing by the rules.</p>
-<doc-anchor-target id="beacon-reward-vs-conveyor-fee">
+<p>A subtle, but integral aspect of our fee structure that was chosen with regards to overall protocol security is the COEX reward. The COEX reward is critically important when considering the possibility of flash loan attacks on the liquidity pools through which the COEX will be executing the transactions. Since the COEX will have visibility over the pending transactions in the queue and know the execution prices of these transactions, it is important to have a mechanistic way of protecting our user base from bad actors in the COEX network. We want to ensure a fair COEX reward for execution while concurrently guaranteeing our user&#x27;s protection from the possibility of COEXs executing profitable flash loan attacks on liquidity pools to manipulate the spot price to reap the rewards of execution.
+The COEX reward regarding the fee has been rigorously determined based on principles of conservation functions used in the liquidity pools our users will be interacting with. In order to determine the optimal COEX reward we formulated objective models on the price impact in liquidity pools based on transaction size, formally we determined the relationship between large swap transactions in correspondence with reserve size to determine a formal model of the potential exploitability of the Conveyor Contract from bad actor COEXs on our user base.
+By analytically determining the relationship between swap size and price impact based on reserve size in the liquidity pools we are able to in real-time calculate the exact threshold amount that a COEX could receive in one execution reward that would make such an attack profitable on the basis of price manipulation in the liquidity pool. We ensure to our user base the unprofitability of such attacks by putting a hard cap on the COEX reward that can be received in one execution to facilitate an ecosystem that rewards playing by the rules.</p>
+<doc-anchor-target id="coex-reward-vs-conveyor-fee">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#beacon-reward-vs-conveyor-fee">#</doc-anchor-trigger>
-        <span>Beacon Reward vs. Conveyor Fee</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#coex-reward-vs-conveyor-fee">#</doc-anchor-trigger>
+        <span>COEX Reward vs. Conveyor Fee</span>
     </h2>
 </doc-anchor-target>
-<p>A user will always pay a fee based on the logistic curve above for each transaction completed. The fee a user pays is split between Conveyor Labs and the Beacon, and is broken down into a sub curve to know exactly which values should be paid to each party.</p>
-<p>For lower value TX&#x27;s that have a higher-tiered fee ($100 trade for example), the ~0.5% fee is split <code v-pre>70% Conveyor Labs/ 30% Beacon</code></p>
-<p>For higher value TX&#x27;s that have a lower-tiered fee ($500,000 trade for example), the ~0.1% fee is split <code v-pre>30% Conveyor Labs/ 70% Beacon</code></p>
-<p>This fee structure is ideal in that It&#x27;s not only gas efficient, but lower value TX&#x27;s offers Conveyor Labs a higher revenue stream while larger transactions offer larger rewards to the Beacon. This higher fee paid to the Beacon at higher values offers an increased financial incentive that strengthens the Beacon network and entices others to spin up a Beacon themselves for a chance of receiving a large reward.</p>
-<p>The Below graph illustrates the % of the user fee split between the Beacon operator who successfully confirms the transaction, and the Conveyor Labs fee</p>
+<p>A user will always pay a fee based on the logistic curve above for each transaction completed. The fee a user pays is split between Conveyor Labs and the COEX, and is broken down into a sub curve to know exactly which values should be paid to each party.</p>
+<p>For lower value TX&#x27;s that have a higher-tiered fee ($100 trade for example), the ~0.5% fee is split <code v-pre>70% Conveyor Labs/ 30% COEX</code></p>
+<p>For higher value TX&#x27;s that have a lower-tiered fee ($500,000 trade for example), the ~0.1% fee is split <code v-pre>30% Conveyor Labs/ 70% COEX</code></p>
+<p>This fee structure is ideal in that It&#x27;s not only gas efficient, but lower value TX&#x27;s offers Conveyor Labs a higher revenue stream while larger transactions offer larger rewards to the COEX. This higher fee paid to the COEX at higher values offers an increased financial incentive that strengthens the COEX network and entices others to spin up a COEX themselves for a chance of receiving a large reward.</p>
+<p>The Below graph illustrates the % of the user fee split between the COEX operator who successfully confirms the transaction, and the Conveyor Labs fee</p>
 <p><figure class="content-center">
-    <img src="../assets/png/desmos-graph.png" alt="Purple = User Fee - Orange = Conveyor's Share - Green = Beacons Share" />
-    <figcaption class="caption"><span style="color:purple">Purple = User Fee</span> - <span style="color:orange">Orange = Conveyor&#x27;s Share</span> - <span style="color:green">Green = Beacons Share</span></figcaption>
+    <img src="../assets/png/desmos-graph.png" alt="Purple = User Fee - Orange = Conveyor's Share - Green = COEXs Share" />
+    <figcaption class="caption"><span style="color:purple">Purple = User Fee</span> - <span style="color:orange">Orange = Conveyor&#x27;s Share</span> - <span style="color:green">Green = COEXs Share</span></figcaption>
 </figure>
 </p>
 <p>The above graph implements the following fee calculation reserved for Conveyor Labs - <span style="color:orange">Orange</span></p>
 <div class="math"><pre>f(x)=(.585/(1.25+e^{\left(x/75000\right)}))\ +\ .04</pre></div>
-<p>and the fee structure reserved for the Beacon that successfully executed the transaction - <span style="color:green">Green</span></p>
+<p>and the fee structure reserved for the COEX that successfully executed the transaction - <span style="color:green">Green</span></p>
 <div class="math"><pre>f(x)=(.315/(1.25+e^{\left(x/75000\right)}))\ +.06</pre></div>
 <p>When both the orange and green logistic curves are combined, they result in the purple line, which is the total fee the user pays once their order is executed.
-The benefit of implementing a crossover in reward allocation is that Beacons who confirm higher value transactions receive a higher proportion of the fee, while lower transactions benefit Conveyor Labs for future developments of the ecosystem. Custom beacon applications can be custom developed by software developers that only focus on higher-value transactions, while other Beacon applications can be focused on smaller, more frequent trades.
-The end result is a fee structure where lower volume trades benefit the growth of Conveyor Labs -- and in turn its ecosystem -- while higher volume trades benefit the growth of the Beacon network responsible for automating the Conveyor ecosystem.</p>
+The benefit of implementing a crossover in reward allocation is that COEXs who confirm higher value transactions receive a higher proportion of the fee, while lower transactions benefit Conveyor Labs for future developments of the ecosystem. Custom COEX applications can be custom developed by software developers that only focus on higher-value transactions, while other COEX applications can be focused on smaller, more frequent trades.
+The end result is a fee structure where lower volume trades benefit the growth of Conveyor Labs -- and in turn its ecosystem -- while higher volume trades benefit the growth of the COEX network responsible for automating the Conveyor ecosystem.</p>
 <p>The Desmos graph that plots the above functions and graphs can be seen via this <a href="https://www.desmos.com/calculator/rwzozaktoc">Desmos link</a>.</p>
 
                                 
@@ -259,11 +337,11 @@ The end result is a fee structure where lower volume trades benefit the growth o
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../whyconveyorfinance/trustless/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../automatedordertypes/stoplosses/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Trustless</span>
+                                                <span class="block mt-1">Stoplosses</span>
                                             </span>
                                         </a>
                                     </div>
@@ -287,7 +365,7 @@ The end result is a fee structure where lower volume trades benefit the growth o
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2022 - <a href="https://conveyorlabs.org">Conveyor Labs</a> - All rights reserved.</p></div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023 - <a href="https://conveyorlabs.org">Conveyor Labs</a> - All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>

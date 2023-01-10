@@ -1,15 +1,15 @@
 ---
-label: Risk Mitigation
+label: Security
 icon: shield-check
 ---
 
 # Risk Mititgation
-Several implementations and design decisions were made to create a system that benefits users of the protocols, as well as those who host an off-chain Beacon application. 
+Several implementations and design decisions were made to create a system that benefits users of the protocols, as well as those who host an off-chain COEX application. 
 
 ## Flash Loan Attacks
-Flash loan attacks on our user base pose a significant threat to the protocol by bad actors in the beacon network. Traditional DeFi automation networks such as The Gelato Network have an internal executor network to call the execution functions of the on-chain logic. The Conveyor beacon network is completely democratized, allowing anyone to spin up a beacon client and start executing incoming orders in the queue. The reason why most other well-known DeFi automation protocols keep their executor network internal is because of the risk of bad actors in the beacon network. Since the beacon network will be reaping the rewards of execution on the transactions in the queue, it is possible for a beacon to manipulate the spot price in a liquidity pool to drive the price to the execution trigger for a batch of transactions to execute, in such cases where the execution reward is significantly large. 
+Flash loan attacks on our user base pose a significant threat to the protocol by bad actors in the COEX network. Traditional DeFi automation networks such as The Gelato Network have an internal executor network to call the execution functions of the on-chain logic. The Conveyor COEX network is completely democratized, allowing anyone to spin up a COEX client and start executing incoming orders in the queue. The reason why most other well-known DeFi automation protocols keep their executor network internal is because of the risk of bad actors in the COEX network. Since the COEX network will be reaping the rewards of execution on the transactions in the queue, it is possible for a COEX to manipulate the spot price in a liquidity pool to drive the price to the execution trigger for a batch of transactions to execute, in such cases where the execution reward is significantly large. 
 
-The Conveyor protocol has deeply analyzed this problem, and mathematically formulated a model on when such an attack will be profitable. Our protocol's beacon reward is analytically determined with flash loan attacks in mind and is hard-capped at the exact value that would make such an attack profitable. Meaning, a beacon could take out a flash loan to manipulate the price of an lp to the execution trigger for a batch of transactions and at best will be breaking even - the gas accumulated in the transaction. Alternatively, the beacon could simply play by the rules and reap the max execution reward getting a net-positive return. 
+The Conveyor protocol has deeply analyzed this problem, and mathematically formulated a model on when such an attack will be profitable. Our protocol's COEX reward is analytically determined with flash loan attacks in mind and is hard-capped at the exact value that would make such an attack profitable. Meaning, a COEX could take out a flash loan to manipulate the price of an lp to the execution trigger for a batch of transactions and at best will be breaking even - the gas accumulated in the transaction. Alternatively, the COEX could simply play by the rules and reap the max execution reward getting a net-positive return. 
 
 The overall philosophy of the Conveyor protocol has been to mechanistically design the system in such a way that the most profitable way to use the platform is also the correct way to use the platform, and flash loan attack prevention has been mechanistically designed into the system to be unprofitable so attempting such attacks will invariably lose money for bad actors in the network. 
 

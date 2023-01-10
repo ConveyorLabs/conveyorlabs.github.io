@@ -1,3 +1,8 @@
+---
+label: Non-Custodial
+icon: check
+---
+
 # 100% Non-Custodial
 
 There are a few protocols on the market that provide automation for your tokens, but of those, many require you to send your assets to a shared contract in order to automate your trades. 

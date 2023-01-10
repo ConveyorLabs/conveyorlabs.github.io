@@ -9,32 +9,32 @@
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Gas Credits</title>
-    <meta name="title" content="Gas Credits">
-    <meta name="description" content="For a limit order to execute, the COEX must call the fufillOrder() function on the Conveyor Limit Order contract." />
+    <title>Stoplosses</title>
+    <meta name="title" content="Stoplosses">
+    <meta name="description" content="Conveyor Finance offers fully decentralized and non-custodial stoploss orders. If you are unfamiliar with how stoploss works, you can" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.conveyor.finance/gascredits/" />
+    <link rel="canonical" href="https://docs.conveyor.finance/automatedordertypes/stoplosses/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.conveyor.finance/gascredits/">
-    <meta property="og:title" content="Gas Credits">
-    <meta property="og:description" content="For a limit order to execute, the COEX must call the fufillOrder() function on the Conveyor Limit Order contract.">
+    <meta property="og:url" content="https://docs.conveyor.finance/automatedordertypes/stoplosses/">
+    <meta property="og:title" content="Stoplosses">
+    <meta property="og:description" content="Conveyor Finance offers fully decentralized and non-custodial stoploss orders. If you are unfamiliar with how stoploss works, you can">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.conveyor.finance/gascredits/">
-    <meta property="twitter:title" content="Gas Credits">
-    <meta property="twitter:description" content="For a limit order to execute, the COEX must call the fufillOrder() function on the Conveyor Limit Order contract.">
+    <meta property="twitter:url" content="https://docs.conveyor.finance/automatedordertypes/stoplosses/">
+    <meta property="twitter:title" content="Stoplosses">
+    <meta property="twitter:description" content="Conveyor Finance offers fully decentralized and non-custodial stoploss orders. If you are unfamiliar with how stoploss works, you can">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=2.4.0.726695012354" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.726695012354" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.726695012354" data-turbo-eval="false" defer></script>
-    <script type="text/javascript" src="../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.726695012354" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.726695012354" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.726695012354" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -49,10 +49,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../assets/svg/logodark.svg">
-                                <img class="max-h-10 hidden dark:inline-block" src="../assets/svg/logodark.svg">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../assets/svg/logodark.svg">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../assets/svg/logodark.svg">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Conveyor Finance</span>
                         </a>
@@ -244,45 +244,55 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="gas-credits" class="break-words">
+<doc-anchor-target id="stoplosses" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#gas-credits">#</doc-anchor-trigger>
-        <span>Gas Credits</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stoplosses">#</doc-anchor-trigger>
+        <span>Stoplosses</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="overview">
+<doc-anchor-target id="stoploss-orders">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
-        <span>Overview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stoploss-orders">#</doc-anchor-trigger>
+        <span>Stoploss Orders</span>
     </h2>
 </doc-anchor-target>
-<p>For a limit order to execute, the COEX must call the fufillOrder() function on the Conveyor Limit Order contract. The COEX spends the gas necessary to execute the order, but what happens if the cost to execute the order is higher than the profit from the limit order itself? This is where gas credits come in. Gas credits are an important concept to the Conveyor ecosystem, ensuring that COEX runners are incentivized to execute limit orders as fast as possible.</p>
-<doc-anchor-target id="what-are-gas-credits">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-are-gas-credits">#</doc-anchor-trigger>
-        <span>What Are Gas Credits?</span>
-    </h2>
+<p>Conveyor Finance offers fully decentralized and non-custodial stoploss orders. If you are unfamiliar with how stoploss works, you can <a href="https://www.investopedia.com/terms/s/stop-lossorder.asp">follow this link to learn more</a>.</p>
+<p>Unlike centralized exchanges where stoplosses execute on a centralized orderbook, stoplosses through Conveyor are filled at market price across any of the available decentralized exchanges (DEXs) that Conveyor supports.</p>
+<p>The DEXs supported for stops on each chain all have at least 500M in liquidity and are reputable exchanges that have stood the test of time (UniswapV2, UniswapV3, Sushiswap, etc). To find a full list of the DEXs that are supported for stop losses for any chain Conveyor is deployed to, <a href="">click here</a>.</p>
+<doc-anchor-target id="how-stoploss-orders-work">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-stoploss-orders-work">#</doc-anchor-trigger>
+        <span>How Stoploss Orders Work</span>
+    </h3>
 </doc-anchor-target>
-<p>When a user first places an order, they are required to deposit gas credits to cover the cost the COEX incurs when executing the order. Simply put, a user stores a small amount of ETH in the Limit Order contract to pay the COEX for order execution. A user must add a minimum amount of gas credits, dependent on the current fair gas price at order placement to ensure order completion.   In the case where gas price increases and the user does not have enough gas credits to cover order execution, the COEX would not have an incentive to fulfill the order, thus risking order cancellation. It is recommended that a user deposits enough gas credits to account for gas price fluctuation.
-All gas credits are accounted for within the gasCredits mapping stored in the Limit Order contract, keeping track of how many gas credits a user has at any time. Users can add to their gas credit balance whenever they would like and can withdraw all gas credits as long as they have no pending orders. If a user has a pending order and wants to withdraw their credits, they must first cancel the order, and then they will be able to withdraw their full balance.
-It is recommended that a user deposits at least 3x the current gas credits requirement in order to sufficiently cover the potential for volatility in gas prices. With this is mind, a user should always over estimate the amount of gas credits you put in to ensure coverage. The conveyor front-end web interface will always keep track of the gas prices in real-time and notify the user if their current gas credit balance is below the threshold for execution, however the user must maintain their gas credit balance above the necessary threshold.</p>
-<doc-anchor-target id="gas-credits-strengthen-the-ecosystem">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#gas-credits-strengthen-the-ecosystem">#</doc-anchor-trigger>
-        <span>Gas Credits Strengthen The Ecosystem</span>
-    </h2>
+<p><a href="">Off-chain executors</a> are monitoring market conditions 24/7, ready to execute a limit order when any DEX meets the execution price. When an order reaches market price, an executor will call the <code v-pre>executeLimitOrders</code> function and pass in the <code v-pre>orderId</code> for the order. From there, the contract trustlessly verifies that the market conditions meet the order&#x27;s execution price and fills the order on the most advantageous liquidity pool at the time of execution. The amount out less fees is then sent directly to the order owner&#x27;s wallet. The result is a fully decentralized and trustless stoploss execution, without having to ever worry about the tokens leaving your wallet. Since all liquidity pool prices are verified on-chain, the gas cost of stoplosses is higher than a typical swap on a DEX.</p>
+<doc-anchor-target id="how-to-place-stoploss-orders">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-place-stoploss-orders">#</doc-anchor-trigger>
+        <span>How to Place Stoploss Orders</span>
+    </h3>
 </doc-anchor-target>
-<p>In order to maintain full decentralization and trustlessness within the Conveyor ecosystem, all values must be verified on-chain from execution price to gas price. This ensures that a COEX runner can not input arbitrary values and keeps the system fully trustless. In order to execute this logic the COEX must spend gas, incurring a cost to interact with the contract. In the event that the profit gained from order execution does not cover the cost of order execution, the COEX would be losing money to interact with the contract. This is where gas credits come in. Gas credits ensure that the order execution is profitable for the COEX, meaning that the COEX is assured an incentive to call the contract to execute the order. Since there is an incentive to fulfill the order, COEXs will race and compete to execute the order which benefits the user by ensuring order fills as fast as possible.</p>
-<p>Gas credits also help to reduce contract storage bloat, which makes reading and writing from the contract&#x27;s storage more expensive. Since there is a minimum gas credit upon each order, this discourages contract spamming. Additionally, due to order cancelation upon a user&#x27;s gas credits falling below the necessary threshold for COEX execution, the contract storage is able to stay lean.</p>
-<doc-anchor-target id="how-is-gas-price-estimated">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-is-gas-price-estimated">#</doc-anchor-trigger>
-        <span>How Is Gas Price Estimated?</span>
-    </h2>
+<p>To place a stoploss order, head over to the <a href="https://beta.conveyor.finance/#/stop?chain=polygon">stoploss interface</a> and select the <code v-pre>tokenIn</code> &amp; <code v-pre>tokenOut</code> from the drop down selector. Then, enter the <code v-pre>quantity</code> of tokens you would like to trade and the <code v-pre>stop price</code>, signifying the price that the stoploss should trigger at. If this is your first time placing an order on the <code v-pre>tokenIn</code> with Conveyor, you will be asked to give the <code v-pre>LimitOrderExecutor</code> approval. This will only be required once.
+The execution credit amount of the order will autofill a reccomendation. Although there is no required amount, a sufficient execution credit will ensure fufillment at execution time as this is used to compensate the off-chain executor the gas spent on the traders behalf. To compensate the gas spent by the off-chain executors when filling your order, <a href="">execution credits</a> are should be deposited. Simply put, execution credits is ETH attached to your order and paid to the executor upon fufillment. The front end will recommend an amount of execution credits for your order based on the current gas prices across the network. However, you are able to deposit more or less than the recommended amount. <strong>Note that if your order does not have enough credits to cover the gas cost of execution, off-chain executors might not fill the order when expected. It is highly recommended that users do not use less than the front end&#x27;s recommendation.</strong></p>
+<img src="https://i.imgur.com/Xia3k36.png" width="400"/>
+<p>In addition to the previously mentioned order settings, you can also set an order expiration timestamp, order slippage and an optional token tax. You are able to set any expiration timestamp for your order, however if no value is supplied, the expiration time will default to 30 days. Note that if you set an expiration time over 30 days, there will be a small fee (0.002 ETH) to refresh your order on every 30 day interval. This fee will be decremented from the execution credits deposited with the order so make sure to account for this when placing orders with extended expiration.</p>
+<img src="https://i.imgur.com/Ht5yKvv.png" width="400"/>
+<doc-anchor-target id="how-to-updatecancel-an-order">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-updatecancel-an-order">#</doc-anchor-trigger>
+        <span>How To Update/Cancel an Order</span>
+    </h3>
 </doc-anchor-target>
-<p>When determining how many gas credits should be spent for order execution, gas price is verified on-chain to ensure a fair market price for execution.
-Initially Conveyor will be using ChainLink&#x27;s Fast Gas Oracle, which updates gas price whenever gas fluctuates 25% from its current price, or after 7200 seconds has passed since the previous update.</p>
-<p>While the initial gas oracle will be Chainlink, Conveyor will be developing a fully decentralized, trustless gas oracle with block to block precision, cheaper execution costs, and fees paid in Eth instead of a non-native token.</p>
+<p>After placing a stoploss order, you have the ability to modify the <code v-pre>price</code>, <code v-pre>amountIn</code>, and <code v-pre>executionCredits</code> of the order as well as the ability to cancel the order, removing it from the contract. To cancel or update an order, navigate to the <code v-pre>Orders</code> tab and select the dropdown on the order you wish to modify as seen below.</p>
+<img src="https://i.imgur.com/yDDDuld.png" width="400"/>
+<doc-anchor-target id="viewing-current-and-completed-orders">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#viewing-current-and-completed-orders">#</doc-anchor-trigger>
+        <span>Viewing Current and Completed Orders</span>
+    </h3>
+</doc-anchor-target>
+<p>To view any active or filled orders, head over to the <code v-pre>Orders</code> section in the navigation bar. All active orders will be listed under the <code v-pre>Current Orders</code> tab, while all completed orders will be listed under the <code v-pre>Completed Orders</code> tab.  If an order has been successfully filled there will be a green <code v-pre>Filled</code> label listed as the order&#x27;s status.</p>
+<img src="https://i.imgur.com/2SaXzsq.png" width="400"/>
 
                                 
                                 <!-- Required only on API pages -->
@@ -292,20 +302,20 @@ Initially Conveyor will be using ChainLink&#x27;s Fast Gas Oracle, which updates
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../feestructure/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../automatedordertypes/limits/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Fee Structure</span>
+                                                <span class="block mt-1">Limits</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../security/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../feestructure/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Security</span>
+                                                <span class="block mt-1">Fee Structure</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -349,6 +359,6 @@ Initially Conveyor will be using ChainLink&#x27;s Fast Gas Oracle, which updates
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Gas Credits", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Stoplosses", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
