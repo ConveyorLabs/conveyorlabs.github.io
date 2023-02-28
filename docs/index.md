@@ -1,6 +1,4 @@
-# Welcome to Conveyor Finance!
-
-![](assets/png/bannerDark.png)
+# Welcome to Conveyor!
 
 ## What is Conveyor? 
 Conveyor is a collection of protocols to automate the management of digital cryptocurrency assets for funds, DAO's, whales, and the every day trader. Conveyor specializes in bringing features that are typically available on centralized exchanges (CEX), to the decentralized (DeFi) world. This includes stop losses, take profits and automated trading strategies through on-chain logic, enabling a completely trust-less and decentralized system.

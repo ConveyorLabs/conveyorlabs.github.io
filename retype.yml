@@ -2,8 +2,9 @@ input: ./docs
 output: .retype
 url: docs.conveyor.finance
 branding:
-  title: Conveyor Finance
-  logo: assets/svg/logoDark.svg
+  title: Conveyor
+  logo: favicon.ico
+  label: Docs
 links:
 - text: Home
   link: https://conveyor.finance
