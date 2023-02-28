@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.729815636255">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.730860715462">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=2.4.0.729815636255" rel="stylesheet" />
+    <link href="../resources/css/retype.css?v=2.4.0.730860715462" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.729815636255" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../resources/js/config.js?v=2.4.0.730860715462" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.729815636255" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=2.4.0.730860715462" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -49,13 +49,13 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-2xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../assets/svg/logodark.svg">
-                                <img class="max-h-10 hidden dark:inline-block" src="../assets/svg/logodark.svg">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../favicon.ico">
+                                <img class="max-h-10 hidden dark:inline-block" src="../favicon.ico">
                             </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Conveyor Finance</span>
-                        </a>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Conveyor</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -250,12 +250,9 @@
         <span>Smart Contracts</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="ethereum">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ethereum">#</doc-anchor-trigger>
-        <span>Ethereum</span>
-    </h2>
-</doc-anchor-target>
+<doc-tabs>
+<doc-tab id="ethereum">
+<template #title>Ethereum</template>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -287,17 +284,18 @@
 </tr>
 <tr>
 <td>Conveyor Swap Aggregator</td>
-<td>0x6DBEd6b5aeD3b4CD0A0B72c6E3ee7583C1205835</td>
+<td>0xe56B8CF0aB1865Dd0C9A1c81C076D2843Eb90B97</td>
+</tr>
+<tr>
+<td>Conveyor Swap Executor</td>
+<td>0xD4c5F21A568e5e856A658829B581fe37029e699c</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="bnb-chain">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#bnb-chain">#</doc-anchor-trigger>
-        <span>BNB Chain</span>
-    </h2>
-</doc-anchor-target>
+</doc-tab>
+<doc-tab id="bnb-chain">
+<template #title>BNB Chain</template>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -329,17 +327,18 @@
 </tr>
 <tr>
 <td>Conveyor Swap Aggregator</td>
-<td>0x7bfd65463747A2B375a6C376761d054840f49e7D</td>
+<td>0xb663b9804540539c956aeFFf64bAfC19aDbc5e23</td>
+</tr>
+<tr>
+<td>Conveyor Swap Executor</td>
+<td>0xe2d6170B7dAe12fBedC1AC55F55359Dca4607990</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="polygon">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#polygon">#</doc-anchor-trigger>
-        <span>Polygon</span>
-    </h2>
-</doc-anchor-target>
+</doc-tab>
+<doc-tab id="polygon">
+<template #title>Polygon</template>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -371,17 +370,18 @@
 </tr>
 <tr>
 <td>Conveyor Swap Aggregator</td>
-<td>0x2620430fe83D963AE3063faD3EAEeeaDe9262dFF</td>
+<td>0x42538b6BF267646a9dD32789D526386666a6765B</td>
+</tr>
+<tr>
+<td>Conveyor Swap Executor</td>
+<td>0x12eaEc2b0aD76F77Dbc99fd02a175a06538d7a6E</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="arbitrum">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#arbitrum">#</doc-anchor-trigger>
-        <span>Arbitrum</span>
-    </h2>
-</doc-anchor-target>
+</doc-tab>
+<doc-tab id="arbitrum">
+<template #title>Arbitrum</template>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -413,11 +413,87 @@
 </tr>
 <tr>
 <td>Conveyor Swap Aggregator</td>
-<td>0x42538b6BF267646a9dD32789D526386666a6765B</td>
+<td>0x86edC5DC8b75A6ADF5Bd312F94090400C997763C</td>
+</tr>
+<tr>
+<td>Conveyor Swap Executor</td>
+<td>0x3c37AFb914721bcb1D8eEFF45fB91A99A3ef65DF</td>
 </tr>
 </tbody>
 </table>
 </div>
+</doc-tab>
+<doc-tab id="optimism">
+<template #title>Optimism</template>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Contract Name</th>
+<th>Contract Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conveyor Swap Aggregator</td>
+<td>0x542c965e0B017bDA175c92717EECEBeD50BBC470</td>
+</tr>
+<tr>
+<td>Conveyor Swap Executor</td>
+<td>0x0CF7f3F5f1Ff6580147f959519C4eb888b6F214E</td>
+</tr>
+</tbody>
+</table>
+</div>
+</doc-tab>
+<doc-tab id="fantom">
+<template #title>Fantom</template>
+<p>Not enabled currently!</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Contract Name</th>
+<th>Contract Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conveyor Swap Aggregator</td>
+<td>0x05E02F8E9fF3D00219D5a7648306Ec12a58D9195</td>
+</tr>
+<tr>
+<td>Conveyor Swap Executor</td>
+<td>0xaF0a804C877d3C3984A5f92E676737CaBedF5066</td>
+</tr>
+</tbody>
+</table>
+</div>
+</doc-tab>
+<doc-tab id="avalanche">
+<template #title>Avalanche</template>
+<p>Not enabled currently!</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Contract Name</th>
+<th>Contract Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conveyor Swap Aggregator</td>
+<td>0x542c965e0B017bDA175c92717EECEBeD50BBC470</td>
+</tr>
+<tr>
+<td>Conveyor Swap Executor</td>
+<td>0x0CF7f3F5f1Ff6580147f959519C4eb888b6F214E</td>
+</tr>
+</tbody>
+</table>
+</div>
+</doc-tab>
 
                                 
                                 <!-- Required only on API pages -->
@@ -484,6 +560,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "SmartContracts", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Smart Contracts", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
