@@ -16,7 +16,7 @@ links:
   link: https://github.com/conveyorlabs
   icon: mark-github
 - text: Discord
-  link: https://stuff.com
+  link: https://discord.com/invite/w4hNNnzAax
   icon: comment-discussion
 footer:
   copyright: "&copy; Copyright {{ year }} - [Conveyor Labs](https://conveyorlabs.org) - All rights reserved."
