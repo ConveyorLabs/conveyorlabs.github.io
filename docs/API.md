@@ -1,5 +1,5 @@
 ---
-label: Conveyor API Developer Docs
+label: API
 icon: shield-check
 ---
 
