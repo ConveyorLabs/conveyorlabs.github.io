@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.2.0">
 
     <!-- Primary Meta Tags -->
-    <title>DEX Aggregator</title>
-    <meta name="title" content="DEX Aggregator">
-    <meta name="description" content="The Conveyor aggregator is currently compatible with all DEXs that conform to the Uniswap v2/v3 standard, as well as their variants.">
+    <title>Introduction</title>
+    <meta name="title" content="Introduction">
+    <meta name="description" content="Conveyor offers a referral reward to those who refer others to perform swaps using Conveyor.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.conveyor.finance/dexaggregator/">
+    <link rel="canonical" href="https://docs.conveyor.finance/referralprogram/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.conveyor.finance/dexaggregator/">
-    <meta property="og:title" content="DEX Aggregator">
-    <meta property="og:description" content="The Conveyor aggregator is currently compatible with all DEXs that conform to the Uniswap v2/v3 standard, as well as their variants.">
+    <meta property="og:url" content="https://docs.conveyor.finance/referralprogram/">
+    <meta property="og:title" content="Introduction">
+    <meta property="og:description" content="Conveyor offers a referral reward to those who refer others to perform swaps using Conveyor.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.conveyor.finance/dexaggregator/">
-    <meta property="twitter:title" content="DEX Aggregator">
-    <meta property="twitter:description" content="The Conveyor aggregator is currently compatible with all DEXs that conform to the Uniswap v2/v3 standard, as well as their variants.">
+    <meta property="twitter:url" content="https://docs.conveyor.finance/referralprogram/">
+    <meta property="twitter:title" content="Introduction">
+    <meta property="twitter:description" content="Conveyor offers a referral reward to those who refer others to perform swaps using Conveyor.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -35,7 +35,6 @@
     <script data-cfasync="false" src="../resources/js/config.js?v=3.2.0.746729124056" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.2.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.2.0.746729124056" data-turbo-eval="false" defer></script>
-    <script id="mermaid-js" data-cfasync="false" src="../resources/js/mermaid.js?v=3.2.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -243,23 +242,43 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="dex-aggregator" class="break-words">
+<doc-anchor-target id="introduction" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dex-aggregator">#</doc-anchor-trigger>
-        <span>DEX Aggregator</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#introduction">#</doc-anchor-trigger>
+        <span>Introduction</span>
     </h1>
 </doc-anchor-target>
-<p>The Conveyor aggregator is currently compatible with all DEXs that conform to the Uniswap v2/v3 standard, as well as their variants. This encompasses nearly every major DEX launched in the last few years, including Sushiswap, PancakeSwap, Camelot, Trader Joe, and several others. We plan to support several other DeFi protocols in the future including Curve, Balancer, Aave, etc.</p>
-<doc-anchor-target id="why-use-conveyors-aggregator">
+<p>Conveyor offers a referral reward to those who refer others to perform swaps using Conveyor. This referral reward is sent to the referrer when the referred wallet performs any swap through the Conveyor ecosystem. The reward is sent atomically at the time of the swap, and there is no need to collect your rewards via a dashboard or withdraw function</p>
+<doc-anchor-target id="how-it-works">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#why-use-conveyors-aggregator">#</doc-anchor-trigger>
-        <span>Why Use Conveyor&#x27;s Aggregator?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-it-works">#</doc-anchor-trigger>
+        <span>How it works</span>
     </h2>
 </doc-anchor-target>
-<p>Other DEX&#x27;s and aggregators utilize a specific smart contract called a <em>Router</em> that communicates between various liquidity pools for both single and multi LP interactions. While this does improve the likelyhood that a transaction will be successful, all of this processing is executed on-chain with multiple external contract calls and transfers in order to work.</p>
-<p>With Conveyor, we construct all transaction calldata off-chain in a much more effective and cost-efficient manner, and pass the most favorable swap data back to the frontend for the trader to sign with their connected wallet.</p>
-<p>This reduces unnecessary external calls or token transfers, which reduces the amount of on-chain processing needed to perform the swap, resulting in a much more gas efficient swap.</p>
-<p>All calldata is send and received from our API, which syncs with all v2/v3 based pool for each chain Conveyor is deployed to.</p>
+<p>Any wallet can become a referrer by signing a transaction that stores their wallet address to the <a href="../smartcontracts/">ConveyorRouterV1</a>. This can be done simply through the Conveyor <a href="https://app.conveyor.finance">Trading App</a>. The motivation for this method is to save on gas fees when performing the transaction where a referrer qualifies to receive rewards.</p>
+<p>In order to receive rewards, you must write your address to each chain that you&#x27;d like to receive rewards for. When a referred user perform a swaps on each chain, the Conveyor website checks to see if the referred user visits the site using a referrer URL (eg. <code v-pre>https://app.conveyor.finance/?ref=9393e</code>). It then looks up any addresses of the referrer user based on the <code v-pre>?ref=</code> value. and passes the <code v-pre>referralID</code> to the Conveyor API if the user performing the swap is on a chain that the referrer has stored their address in the ConveyorRouterV1 address</p>
+<p>Once a referred user connects their wallet to the website using your referral URL, their wallet is stored to our database as a referred user to you, and they no longer need to access the site via your referral URL in order for you to continue to receive rewards for each swap they perform.</p>
+<center>
+<img src="/assets/png/ReferralModal.png" width="500" />
+</center>
+<doc-anchor-target id="buttons">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#buttons">#</doc-anchor-trigger>
+        <span>Buttons</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Earn Rewards</strong> - This button means your wallet provider is on the same network that correlates with the Chain Name. Pressing this button brings up a transaction for you to sign that stores your wallet address to that chain so you can begin receiving rewards</p>
+<p><strong>Earning Rewards</strong> - This button means that you are currently receiving rewards for that chain, and that any referred users that perform a swap using your referral URL on that chain will grant you rewards.</p>
+<p><strong>Switch Network</strong> - This button means your wallet provider is not on the same network that correlates with the Chain Name, and that you aren&#x27;t currently receiving rewards on that chain. Pressing this button brings requests your wallet provider to switch network. After switching, the button will change to <strong>Earn Rewards</strong>
+<br/>
+<br/></p>
+<doc-anchor-target id="referral-link">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#referral-link">#</doc-anchor-trigger>
+        <span>Referral Link</span>
+    </h3>
+</doc-anchor-target>
+<p>Once you write your wallet address to at least one chain, you will be issued a referral reward with a referral reference ID. This URL is linked to the wallet you used when writing to the first chain and will stay the same through out the lifecycle of the wallet. This referral identifier cannot be changed, as it is derrived from a hash of your wallet.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -273,33 +292,10 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Example: A trader wants to swap <em>X</em> amount of <em>Token A</em> for <em>Token C</em></h5>
+<p>In order for you to receive credit as the referrer of a referred user, they must connect their wallet in the same session as visiting your referral URL. If they revisit the site without your referral ID before first connecting their wallet, they will need to revisit the site using your referral URL again in order for you to receive credit as their referrer.</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="how-other-dexsaggregators-handle-transactions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-other-dexsaggregators-handle-transactions">#</doc-anchor-trigger>
-        <span><center>How other DEX&#x27;s/Aggregators handle transactions</center></span>
-    </h3>
-</doc-anchor-target>
-<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph LR
-    A[User Wallet] --&gt; |Send token A| B(DEX Router)
-    B --&gt; |Send token A| C{Token A/B Liquidity Pool}
-    C --&gt; |Receive token B| B
-    B --&gt; |Send token B| D{Token B/C Liquidity Pool}
-    D --&gt; |Receive token C| B
-    B --&gt; |Receive token C| A</pre></div>
-<doc-anchor-target id="how-conveyor-handles-transactions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-conveyor-handles-transactions">#</doc-anchor-trigger>
-        <span><center>How Conveyor handles transactions</center></span>
-    </h3>
-</doc-anchor-target>
-<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph LR
-    A[User Wallet] --&gt; |Send token A| B{Liquidity Pool #1}
-    B --&gt; |Send token B| C{Liquidity Pool #2}
-    C --&gt; |Receive token C| A</pre></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -309,20 +305,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../api/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../feestructure/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">API</span>
+                                                <span class="block mt-1">Fee Structure</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../feestructure/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../smartcontracts/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Fee Structure</span>
+                                                <span class="block mt-1">Smart Contracts</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -366,6 +362,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "DEX Aggregator", level: 1, icon: "file", hasPrism: false, hasMermaid: true, hasMath: false }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Referral Program", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
