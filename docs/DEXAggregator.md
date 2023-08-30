@@ -3,7 +3,7 @@ icon: arrow-switch
 label: DEX Aggregator
 ---
 
-The Conveyor aggregator is currently compatible with all DEXs that conform to the Uniswap v2/v3 standard. This encompasses nearly every major DEX launched in the last few years, including Sushiswap, PancakeSwap, Camelot, Trader Joe, and several others. We plan to support several other DeFi protocols in the future including Curve, Balancer, Aave, etc.
+The Conveyor aggregator is currently compatible with all DEXs that conform to the Uniswap v2/v3 standard, as well as their variants. This encompasses nearly every major DEX launched in the last few years, including Sushiswap, PancakeSwap, Camelot, Trader Joe, and several others. We plan to support several other DeFi protocols in the future including Curve, Balancer, Aave, etc.
 
 ## Why Use Conveyor's Aggregator?
 
@@ -38,9 +38,3 @@ graph LR
     B --> |Send token B| C{Liquidity Pool #2}
     C --> |Receive token C| A
 ```
-
-All of the calldata that the API returns to the frontend is easily verified before the transaction is signed so that the system is inherently trustless.
-
-## Contract Approval
-
-When performing any swap through any router, Contract approval is required in order for the swap to be successful. Conveyor has **Swap Executor** and **Swap Aggregator** contracts for each chain its deployed to.

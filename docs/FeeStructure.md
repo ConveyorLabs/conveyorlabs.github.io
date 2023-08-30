@@ -14,7 +14,7 @@ For example, if a swap of ETH > USDC costs $20 through 1inch on Ethereum Mainnet
 Conveyor Swap: $10 in gas (Ether)
 
 Gas saving delta: $10 in Ether
-Protocol fee: 50% ($5 in ether)
+Protocol fee: 50% ($5 in Ether)
 ```
 
 The fee is paid via the `msg.value` of the submitted transaction data for Token <> Token swaps, and Token > ETH swaps. For Eth > token swaps, the protocol fee is added to the `msg.value` of the transaction amount, so a swap of 1 ETH > USDC with a .00015 protocol fee would have a `msg.value` of 1.00015 sent from the users wallet to execute the swap and pay the protocol fee.

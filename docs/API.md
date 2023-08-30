@@ -1,6 +1,6 @@
 ---
 label: API
-icon: shield-check
+icon: broadcast
 ---
 
 # Conveyor API Developer Docs
@@ -18,15 +18,15 @@ Example | Schema `application/json`
 ```js
 
 {
-    amountIn: "100000000000000000",
-    slippage: "50",
-    tokenIn: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    tokenInDecimals: 18,
-    tokenOutDecimals: 6,
-    tokenOut: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
-    recipient: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-    chainId: 137,
-    referrer: "1"
+    "tokenIn": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+    "tokenOut": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+    "tokenInDecimals": 18,
+    "tokenOutDecimals": 18,
+    "amountIn": "1000000000000000",
+    "slippage": "50",
+    "chainId": 137,
+    "recipient": "0xD65e57395288AA88f99F8e52D0A23A551E0Ad6Ac",
+    "referrer": "1"
 }
 
 ```
@@ -45,6 +45,10 @@ Breakdown
 |     `chainId`      |      Number       | The Network Id of the chain                                                                                                                                                                           |
 |     `referrer`     | String (Optional) | The referralId in the `ConveyorRouterV1` contract to be compensated 30% of the `protocolFee` on behalf of the swapper.                                                                                |
 
+!!!
+If the native gas asset for the chain (Ether, BNB, Matic, etc..) is either the `tokenIn` or `tokenOut`, pass in `0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE`
+!!!
+
 ### CURL
 
 ```
@@ -57,7 +61,8 @@ curl -X POST   -H "Content-Type: application/json"   -d '
     "amountIn": "1000000000000000",
     "slippage": "50",
     "chainId": 137,
-    "recipient": "0x0000000000000000000000000000000000000000"
+    "recipient": "0xD65e57395288AA88f99F8e52D0A23A551E0Ad6Ac",
+    "referrer: "1"
 }'   https://api.conveyor.finance
 
 ```
@@ -91,7 +96,9 @@ Example | Schema `application/json`
             "affiliateAggregator": "PARASWAP",
             "affiliateGas": "191294",
             "conveyorGas": "221000"
-        }
+        },
+        "chainId": 137,
+        "currentBlockNumber": 18028299
     }
 }
 
@@ -140,3 +147,7 @@ function queryApi({
   //Sign and send the transaction through ethers or web3 provider.
 }
 ```
+
+!!! Important
+The [ConveyorRouterV1](/smartcontracts/) must have approval to swap the`amountIn`of the`tokenIn`on behalf of the`recipient`, else the transaction will revert when executing the `txData`
+!!!
