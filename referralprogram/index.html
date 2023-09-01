@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746729124056">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.3.0.746917225213">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.2.0">
+    <meta name="generator" content="Retype 3.3.0">
 
     <!-- Primary Meta Tags -->
     <title>Introduction</title>
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.2.0.746729124056" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.3.0.746917225213" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.2.0.746729124056" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.2.0.746729124056" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.3.0.746917225213" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=3.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.3.0.746917225213" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -240,7 +240,6 @@
                             <div class="docs-markdown" id="docs-content">
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
-                
                                 <!-- Page content  -->
 <doc-anchor-target id="introduction" class="break-words">
     <h1>
@@ -258,9 +257,9 @@
 <p>Any wallet can become a referrer by signing a transaction that stores their wallet address to the <a href="../smartcontracts/">ConveyorRouterV1</a>. This can be done simply through the Conveyor <a href="https://app.conveyor.finance">Trading App</a>. The motivation for this method is to save on gas fees when performing the transaction where a referrer qualifies to receive rewards.</p>
 <p>In order to receive rewards, you must write your address to each chain that you&#x27;d like to receive rewards for. When a referred user perform a swaps on each chain, the Conveyor website checks to see if the referred user visits the site using a referrer URL (eg. <code v-pre>https://app.conveyor.finance/?ref=9393e</code>). It then looks up any addresses of the referrer user based on the <code v-pre>?ref=</code> value. and passes the <code v-pre>referralID</code> to the Conveyor API if the user performing the swap is on a chain that the referrer has stored their address in the ConveyorRouterV1 address</p>
 <p>Once a referred user connects their wallet to the website using your referral URL, their wallet is stored to our database as a referred user to you, and they no longer need to access the site via your referral URL in order for you to continue to receive rewards for each swap they perform.</p>
-<center>
-<img src="/assets/png/ReferralModal.png" width="500" />
-</center>
+<p align="center">
+  <img src="/assets/png/ReferralModal.png" width="500">
+</p>
 <doc-anchor-target id="buttons">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#buttons">#</doc-anchor-trigger>
