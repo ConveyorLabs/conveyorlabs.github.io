@@ -16,7 +16,7 @@ In order to receive rewards, you must write your address to each chain that you'
 Once a referred user connects their wallet to the website using your referral URL, their wallet is stored to our database as a referred user to you, and they no longer need to access the site via your referral URL in order for you to continue to receive rewards for each swap they perform.
 
 <p align="center">
-  <img src="/assets/png/ReferralModal.png" width="500">
+  <img src="assets/png/ReferralModal.png" width="500">
 </p>
 
 ### Buttons
