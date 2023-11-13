@@ -26,7 +26,8 @@ Example | Schema `application/json`
     "slippage": "50",
     "chainId": 137,
     "recipient": "0xD65e57395288AA88f99F8e52D0A23A551E0Ad6Ac",
-    "referrer": "1"
+    "referrer": "0",
+    "partner": "Caddi"
 }
 
 ```
@@ -44,6 +45,7 @@ Breakdown
 |    `recipient`     |      String       | Address of the receiver of `tokenOut`                                                                                                                                                                 |
 |     `chainId`      |      Number       | The Network Id of the chain                                                                                                                                                                           |
 |     `referrer`     | String (Optional) | The referralId in the `ConveyorRouterV1` contract to be compensated 30% of the `protocolFee` on behalf of the swapper.                                                                                |
+|     `partner`      |      String       | The name of the protocol/dapp integrating the API (EG: "Caddi", "Aori", etc...)                                                                                                                                                                           |
 
 !!!
 If the native gas asset for the chain (Ether, BNB, Matic, etc..) is either the `tokenIn` or `tokenOut`, pass in `0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE`
@@ -62,7 +64,8 @@ curl -X POST   -H "Content-Type: application/json"   -d '
     "slippage": "50",
     "chainId": 137,
     "recipient": "0xD65e57395288AA88f99F8e52D0A23A551E0Ad6Ac",
-    "referrer: "1"
+    "referrer": "1",
+    "partner": "Example"
 }'   https://api.conveyor.finance
 
 ```
