@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.3.0.746917312748">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753218262711">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.3.0">
+    <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
     <title>Conveyor API Developer Docs</title>
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.3.0.746917312748" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.753218262711" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.3.0.746917312748" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.3.0.746917312748" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.3.0.746917312748" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.753218262711" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.753218262711" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.5.0.753218262711" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -274,7 +274,8 @@
     &quot;slippage&quot;: &quot;50&quot;,
     &quot;chainId&quot;: 137,
     &quot;recipient&quot;: &quot;0xD65e57395288AA88f99F8e52D0A23A551E0Ad6Ac&quot;,
-    &quot;referrer&quot;: &quot;1&quot;
+    &quot;referrer&quot;: &quot;0&quot;,
+    &quot;partner&quot;: &quot;Caddi&quot;
 }
 </code></pre>
 </doc-codeblock></div>
@@ -334,6 +335,11 @@
 <td style="text-align: center;">String (Optional)</td>
 <td style="text-align: left;">The referralId in the <code v-pre>ConveyorRouterV1</code> contract to be compensated 30% of the <code v-pre>protocolFee</code> on behalf of the swapper.</td>
 </tr>
+<tr>
+<td style="text-align: center;"><code v-pre>partner</code></td>
+<td style="text-align: center;">String</td>
+<td style="text-align: left;">The name of the protocol/dapp integrating the API (EG: &quot;Caddi&quot;, &quot;Aori&quot;, etc...)</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -371,7 +377,8 @@
     &quot;slippage&quot;: &quot;50&quot;,
     &quot;chainId&quot;: 137,
     &quot;recipient&quot;: &quot;0xD65e57395288AA88f99F8e52D0A23A551E0Ad6Ac&quot;,
-    &quot;referrer: &quot;1&quot;
+    &quot;referrer&quot;: &quot;1&quot;,
+    &quot;partner&quot;: &quot;Example&quot;
 }'   https://api.conveyor.finance
 </code></pre>
 </doc-codeblock></div>
@@ -560,6 +567,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "API", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "API", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
