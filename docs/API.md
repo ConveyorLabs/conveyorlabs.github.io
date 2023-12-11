@@ -45,7 +45,7 @@ Breakdown
 |    `recipient`     |      String       | Address of the receiver of `tokenOut`                                                                                                                                                                 |
 |     `chainId`      |      Number       | The Network Id of the chain                                                                                                                                                                           |
 |     `referrer`     | String (Optional) | The referralId in the `ConveyorRouterV1` contract to be compensated 30% of the `protocolFee` on behalf of the swapper.                                                                                |
-|     `partner`      |      String       | The name of the protocol/dapp integrating the API (EG: "Caddi", "Aori", etc...)                                                                                                                                                                           |
+|     `partner`      |      String       | The name of the protocol/dapp integrating the API (EG: "Caddi", "Aori", etc...)                                                                                                                       |
 
 !!!
 If the native gas asset for the chain (Ether, BNB, Matic, etc..) is either the `tokenIn` or `tokenOut`, pass in `0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE`
@@ -87,7 +87,7 @@ Example | Schema `application/json`
         "message": "GET request processed successfully",
         "tx": {
             "from": "0x0000000000000000000000000000000000000000",
-            "to": "0x3642189b7754302df84b6f3fe1ae34d2026647a7",
+            "to": ConveyorRouterV1,
             "gas": "221000",
             "nonce": 0,
             "value": "10000000000000000000",
@@ -101,11 +101,24 @@ Example | Schema `application/json`
             "conveyorGas": "221000"
         },
         "chainId": 137,
-        "currentBlockNumber": 18028299
+        "currentBlockNumber": 18028299,
+        "errorStatus": {
+        "revert": "Error(string)"
+        },
+        "tax": {
+            "tokenOutSellTax": 0,
+            "tokenOutBuyTax": 0,
+            "tokenInSellTax": 0,
+            "tokenInBuyTax": 0
+        },
     }
 }
 
 ```
+
+!!! errorStatus
+errorStatus response appears when the `eth_call` fails to simulate the transaction. Signing the transaction where errorStatus exists will likely result in the transaction reverting.
+!!!
 
 | Code | Description                                   |
 | :--: | :-------------------------------------------- |
@@ -152,5 +165,5 @@ function queryApi({
 ```
 
 !!! Important
-The [ConveyorRouterV1](/smartcontracts/) must have approval to swap the`amountIn`of the`tokenIn`on behalf of the`recipient`, else the transaction will revert when executing the `txData`
+The [ConveyorRouterV1](/smartcontracts/) must have approval to swap the`amountIn`of the`tokenIn`on behalf of the`recipient`, else the transaction will revert when executing the `txData`, you can get this via `body.tx.to` in the response
 !!!
