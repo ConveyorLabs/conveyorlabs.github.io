@@ -97,8 +97,8 @@ Example | Schema `application/json`
             "amountOutMin": "5507351",
             "amountOut": "5562981",
             "affiliateAggregator": "PARASWAP",
-            "affiliateGas": "191294",
-            "conveyorGas": "221000"
+            "affiliateGas": "221000",
+            "conveyorGas": "191294"
         },
         "chainId": 137,
         "currentBlockNumber": 18028299,
