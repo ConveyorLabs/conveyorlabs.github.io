@@ -103,7 +103,7 @@ Example | Schema `application/json`
         "chainId": 137,
         "currentBlockNumber": 18028299,
         "errorStatus": {
-        "revert": "Error(string)"
+            "revert": "Error(string)"
         },
         "tax": {
             "tokenOutSellTax": 0,
