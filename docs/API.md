@@ -5,6 +5,13 @@ icon: broadcast
 
 # Conveyor API Developer Docs
 
+!!! Important
+If you are a developer who is considering integrating us as your swap provider, please reach out to us first! There are several nuances in implementing our swap API, and we'd love to help walk you through any problems you might have while integrating. Our goal is to ensure that swaps are 100% reliable.
+
+<strong>Telegram:</strong> <a href="https://t.me/conveyorlabs" target="_blank">@Conveyorlabs</a></br>
+<strong>Discord:</strong> conveyorlabs
+!!!
+
 The Conveyor API allows users to fetch optimal swap routes from one token to another along with executable transaction data. Currently Conveyor supports Ethereum, BSC, Polygon, Arbitrum, and Optimism.
 
 # Querying the API
