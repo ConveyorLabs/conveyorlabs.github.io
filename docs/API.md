@@ -172,5 +172,5 @@ function queryApi({
 ```
 
 !!! Important
-The [ConveyorRouterV1](/smartcontracts/) must have approval to swap the`amountIn`of the`tokenIn`on behalf of the`recipient`, else the transaction will revert when executing the `txData`, you can get this via `body.tx.to` in the response
+The [ConveyorRouterV1](/smartcontracts/) must have approval to swap the`amountIn`of the`tokenIn`on behalf of the`msg.sender`, else the transaction will revert when executing the `txData`, you can get this via `body.tx.to` in the response
 !!!
