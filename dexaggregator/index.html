@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.757785013404">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759859775642">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.757785013404" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.759859775642" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.757785013404" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.759859775642" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.757785013404" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.759859775642" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../resources/js/mermaid.js?v=3.5.0" defer></script>
 </head>
 <body>
@@ -258,7 +258,6 @@
 <p>Other DEX&#x27;s and aggregators utilize a specific smart contract called a <em>Router</em> that communicates between various liquidity pools for both single and multi LP interactions. While this does improve the likelyhood that a transaction will be successful, all of this processing is executed on-chain with multiple external contract calls and transfers in order to work.</p>
 <p>With Conveyor, we construct all transaction calldata off-chain in a much more effective and cost-efficient manner, and pass the most favorable swap data back to the frontend for the trader to sign with their connected wallet.</p>
 <p>This reduces unnecessary external calls or token transfers, which reduces the amount of on-chain processing needed to perform the swap, resulting in a much more gas efficient swap.</p>
-<p>All calldata is send and received from our API, which syncs with all v2/v3 based pool for each chain Conveyor is deployed to.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
