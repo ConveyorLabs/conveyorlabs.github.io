@@ -13,8 +13,6 @@ With Conveyor, we construct all transaction calldata off-chain in a much more ef
 
 This reduces unnecessary external calls or token transfers, which reduces the amount of on-chain processing needed to perform the swap, resulting in a much more gas efficient swap.
 
-All calldata is send and received from our API, which syncs with all v2/v3 based pool for each chain Conveyor is deployed to.
-
 !!! Example: A trader wants to swap _X_ amount of _Token A_ for _Token C_
 !!!
 
