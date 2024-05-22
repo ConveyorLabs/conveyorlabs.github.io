@@ -33,24 +33,26 @@ Example | Schema `application/json`
     "slippage": "50",
     "chainId": 137,
     "recipient": "0xD65e57395288AA88f99F8e52D0A23A551E0Ad6Ac",
-    "partner": "Caddi"
+    "partner": "Caddi",
+    "forceCalldata": true || "true"
 }
 
 ```
 
 Breakdown
 
-|        Name        |       Type        | Description                                                                                                                                                                                           |
-| :----------------: | :---------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     `amountIn`     |      String       | The total value being quoted on the tokenIn                                                                                                                                                           |
-|     `slippage`     |      String       | Allowable % price impact on the transaction in [Bips](https://www.investopedia.com/ask/answers/what-basis-point-bps/). </br> Note: The API will use this % to set the `amountOutMin` in the calldata. |
-|     `tokenIn`      |      String       | The address of the token being swapped. Burn address if swapping Native asset on chain                                                                                                                |
-| `tokenInDecimals`  | Number (optional) | The decimals of `tokenIn`                                                                                                                                                                             |
-|     `tokenOut`     |      String       | The address of the token being swapped into. Burn address if swapping Native asset on chain                                                                                                           |
-| `tokenOutDecimals` | Number (optional) | The decimals of `tokenOut`                                                                                                                                                                            |
-|    `recipient`     |      String       | Address of the receiver of `tokenOut`                                                                                                                                                                 |
-|     `chainId`      |      Number       | The Network Id of the chain                                                                                                                                                                           |
-|     `partner`      |      String       | The name of the protocol/dapp integrating the API (EG: "Caddi", "Aori", etc...)                                                                                                                       |
+|        Name        |          Type          | Description                                                                                                                                                                                           |
+| :----------------: | :--------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     `amountIn`     |         String         | The total value being quoted on the tokenIn                                                                                                                                                           |
+|     `slippage`     |         String         | Allowable % price impact on the transaction in [Bips](https://www.investopedia.com/ask/answers/what-basis-point-bps/). </br> Note: The API will use this % to set the `amountOutMin` in the calldata. |
+|     `tokenIn`      |         String         | The address of the token being swapped. Burn address if swapping Native asset on chain                                                                                                                |
+| `tokenInDecimals`  |   Number (optional)    | The decimals of `tokenIn`                                                                                                                                                                             |
+|     `tokenOut`     |         String         | The address of the token being swapped into. Burn address if swapping Native asset on chain                                                                                                           |
+| `tokenOutDecimals` |   Number (optional)    | The decimals of `tokenOut`                                                                                                                                                                            |
+|    `recipient`     |         String         | Address of the receiver of `tokenOut`                                                                                                                                                                 |
+|     `chainId`      |         Number         | The Network Id of the chain                                                                                                                                                                           |
+|     `partner`      |         String         | The name of the protocol/dapp integrating the API (EG: "Caddi", "Aori", etc...)                                                                                                                       |
+|  `forceCalldata`   | Bool/String (optional) | Forces calldata generation always. <u>Only needed if wrapping `body.tx.simulation.data` in an external contract</u> (i.e. Permit2, Account Abstraction, etc.). Default: false                         |
 
 !!!
 If the native gas asset for the chain (Ether, BNB, Matic, etc..) is either the `tokenIn` or `tokenOut`, pass in `0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE`
@@ -58,19 +60,20 @@ If the native gas asset for the chain (Ether, BNB, Matic, etc..) is either the `
 
 ### CURL
 
-```
+```js
 curl -X POST   -H "Content-Type: application/json"   -d '
     {
-    "tokenIn": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-    "tokenOut": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
-    "tokenInDecimals": 18,
-    "tokenOutDecimals": 18,
-    "amountIn": "1000000000000000",
-    "slippage": "50",
-    "chainId": 137,
-    "recipient": "0xD65e57395288AA88f99F8e52D0A23A551E0Ad6Ac",
-    "partner": "Example"
-}'   https://api.conveyor.finance
+        "tokenIn": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+        "tokenOut": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+        "tokenInDecimals": 18,
+        "tokenOutDecimals": 18,
+        "amountIn": "100000000000000000",
+        "slippage": "500",
+        "chainId": 56,
+        "recipient": "0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5",
+        "referrer": "0",
+        "partner": "Conveyor",
+    }'   https://api.conveyor.finance
 
 ```
 
@@ -88,33 +91,44 @@ Example | Schema `application/json`
         "Access-Control-Allow-Origin": "*"
     },
     "body": {
-        "message": "GET request processed successfully",
         "tx": {
-            "from": "0x0000000000000000000000000000000000000000",
-            "to": ConveyorRouterV1,
-            "gas": "221000",
-            "nonce": 0,
-            "value": "10000000000000000000",
-            "data": "0x27fa6f42000....."
+            "from": "0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5",
+            "to": "ConveyorRouterV1", // this address need approval for token>token and token>eth swaps. See https://docs.conveyor.finance/smartcontracts/ for correct address.
+            "gas": "121500",
+            "nonce": 304,
+            "value": "100149250000000000",
+            "simulation": {
+                "simulationResults": "succeeded",
+                //all transactions simulate and either return "succeeded" or "fail",
+                //failing calldata will likely not succeed on-chain and should only
+                //be used if using Permit2 or Account Abstraction to wrap calldata"
+                "data": "0x27fa6f420..."
+            },
+            "data": "0x27fa6f420..." //reference this calldata if NOT wrapping in Permit2 or Account Abstraction
         },
         "info": {
-            "amountOutMin": "5507351",
-            "amountOut": "5562981",
-            "affiliateAggregator": "Paraswap",
-            "affiliateGas": "221000",
-            "conveyorGas": "191294"
+            "amountOutMin": "58491192931287683088",
+            "amountOut": "61569676769776508514",
+            "affiliateAggregator": "Kyber",
+            "affiliateGas": "210000",
+            "conveyorGas": "121500",
+            "gasPrice": "1000000000",
+            "poolNames": [
+                "PANCAKESWAP_V3" // returns array of pool names, orders largest > smallest value first
+            ]
         },
-        "chainId": 137,
-        "currentBlockNumber": 18028299,
-        "errorStatus": {
-            "revert": "Error(string)"
+        "errorStatus": { //if body.tx.simulation.simulationResults === "fail" errorStatus will be present. If transaction is known to succeed, errorStatus will not be present.
+            "reason": "The total cost (gas * gas fee + value) of executing this transaction exceeds the balance of the account.",
+            "details": "err: insufficient funds for gas * price + value: address 0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5 have 19970621455133468 want 100000000000000000 (supplied gas 25010499)"
         },
         "tax": {
-            "tokenOutSellTax": 0,
-            "tokenOutBuyTax": 0,
             "tokenInSellTax": 0,
-            "tokenInBuyTax": 0
+            "tokenInBuyTax": 0,
+            "tokenOutSellTax": 0,
+            "tokenOutBuyTax": 0
         },
+        "chainId": 56,
+        "currentBlockNumber": "38956072"
     }
 }
 
