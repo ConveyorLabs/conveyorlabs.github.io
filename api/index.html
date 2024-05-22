@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759859775642">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769730878409">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.759859775642" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.769730878409" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.759859775642" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.769730878409" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.759859775642" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.5.0.759859775642" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.769730878409" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.5.0.769730878409" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -294,7 +294,8 @@
     &quot;slippage&quot;: &quot;50&quot;,
     &quot;chainId&quot;: 137,
     &quot;recipient&quot;: &quot;0xD65e57395288AA88f99F8e52D0A23A551E0Ad6Ac&quot;,
-    &quot;partner&quot;: &quot;Caddi&quot;
+    &quot;partner&quot;: &quot;Caddi&quot;,
+    &quot;forceCalldata&quot;: true || &quot;true&quot;
 }
 </code></pre>
 </doc-codeblock></div>
@@ -354,6 +355,11 @@
 <td style="text-align: center;">String</td>
 <td style="text-align: left;">The name of the protocol/dapp integrating the API (EG: &quot;Caddi&quot;, &quot;Aori&quot;, etc...)</td>
 </tr>
+<tr>
+<td style="text-align: center;"><code v-pre>forceCalldata</code></td>
+<td style="text-align: center;">Bool/String (optional)</td>
+<td style="text-align: left;">Forces calldata generation always. <u>Only needed if wrapping <code v-pre>body.tx.simulation.data</code> in an external contract</u> (i.e. Permit2, Account Abstraction, etc.). Default: false</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -381,18 +387,19 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">curl -X POST   -H &quot;Content-Type: application/json&quot;   -d '
+<pre class="language-javascript"><code v-pre class="language-javascript">curl -X POST   -H &quot;Content-Type: application/json&quot;   -d '
     {
-    &quot;tokenIn&quot;: &quot;0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&quot;,
-    &quot;tokenOut&quot;: &quot;0xd6df932a45c0f255f85145f286ea0b292b21c90b&quot;,
-    &quot;tokenInDecimals&quot;: 18,
-    &quot;tokenOutDecimals&quot;: 18,
-    &quot;amountIn&quot;: &quot;1000000000000000&quot;,
-    &quot;slippage&quot;: &quot;50&quot;,
-    &quot;chainId&quot;: 137,
-    &quot;recipient&quot;: &quot;0xD65e57395288AA88f99F8e52D0A23A551E0Ad6Ac&quot;,
-    &quot;partner&quot;: &quot;Example&quot;
-}'   https://api.conveyor.finance
+        &quot;tokenIn&quot;: &quot;0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&quot;,
+        &quot;tokenOut&quot;: &quot;0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d&quot;,
+        &quot;tokenInDecimals&quot;: 18,
+        &quot;tokenOutDecimals&quot;: 18,
+        &quot;amountIn&quot;: &quot;100000000000000000&quot;,
+        &quot;slippage&quot;: &quot;500&quot;,
+        &quot;chainId&quot;: 56,
+        &quot;recipient&quot;: &quot;0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&quot;,
+        &quot;referrer&quot;: &quot;0&quot;,
+        &quot;partner&quot;: &quot;Conveyor&quot;,
+    }'   https://api.conveyor.finance
 </code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="response">
@@ -412,33 +419,44 @@
         &quot;Access-Control-Allow-Origin&quot;: &quot;*&quot;
     },
     &quot;body&quot;: {
-        &quot;message&quot;: &quot;GET request processed successfully&quot;,
         &quot;tx&quot;: {
-            &quot;from&quot;: &quot;0x0000000000000000000000000000000000000000&quot;,
-            &quot;to&quot;: ConveyorRouterV1,
-            &quot;gas&quot;: &quot;221000&quot;,
-            &quot;nonce&quot;: 0,
-            &quot;value&quot;: &quot;10000000000000000000&quot;,
-            &quot;data&quot;: &quot;0x27fa6f42000.....&quot;
+            &quot;from&quot;: &quot;0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&quot;,
+            &quot;to&quot;: &quot;ConveyorRouterV1&quot;, // this address need approval for token&gt;token and token&gt;eth swaps. See https://docs.conveyor.finance/smartcontracts/ for correct address.
+            &quot;gas&quot;: &quot;121500&quot;,
+            &quot;nonce&quot;: 304,
+            &quot;value&quot;: &quot;100149250000000000&quot;,
+            &quot;simulation&quot;: {
+                &quot;simulationResults&quot;: &quot;succeeded&quot;,
+                //all transactions simulate and either return &quot;succeeded&quot; or &quot;fail&quot;,
+                //failing calldata will likely not succeed on-chain and should only
+                //be used if using Permit2 or Account Abstraction to wrap calldata&quot;
+                &quot;data&quot;: &quot;0x27fa6f420...&quot;
+            },
+            &quot;data&quot;: &quot;0x27fa6f420...&quot; //reference this calldata if NOT wrapping in Permit2 or Account Abstraction
         },
         &quot;info&quot;: {
-            &quot;amountOutMin&quot;: &quot;5507351&quot;,
-            &quot;amountOut&quot;: &quot;5562981&quot;,
-            &quot;affiliateAggregator&quot;: &quot;Paraswap&quot;,
-            &quot;affiliateGas&quot;: &quot;221000&quot;,
-            &quot;conveyorGas&quot;: &quot;191294&quot;
+            &quot;amountOutMin&quot;: &quot;58491192931287683088&quot;,
+            &quot;amountOut&quot;: &quot;61569676769776508514&quot;,
+            &quot;affiliateAggregator&quot;: &quot;Kyber&quot;,
+            &quot;affiliateGas&quot;: &quot;210000&quot;,
+            &quot;conveyorGas&quot;: &quot;121500&quot;,
+            &quot;gasPrice&quot;: &quot;1000000000&quot;,
+            &quot;poolNames&quot;: [
+                &quot;PANCAKESWAP_V3&quot; // returns array of pool names, orders largest &gt; smallest value first
+            ]
         },
-        &quot;chainId&quot;: 137,
-        &quot;currentBlockNumber&quot;: 18028299,
-        &quot;errorStatus&quot;: {
-            &quot;revert&quot;: &quot;Error(string)&quot;
+        &quot;errorStatus&quot;: { //if body.tx.simulation.simulationResults === &quot;fail&quot; errorStatus will be present. If transaction is known to succeed, errorStatus will not be present.
+            &quot;reason&quot;: &quot;The total cost (gas * gas fee + value) of executing this transaction exceeds the balance of the account.&quot;,
+            &quot;details&quot;: &quot;err: insufficient funds for gas * price + value: address 0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5 have 19970621455133468 want 100000000000000000 (supplied gas 25010499)&quot;
         },
         &quot;tax&quot;: {
-            &quot;tokenOutSellTax&quot;: 0,
-            &quot;tokenOutBuyTax&quot;: 0,
             &quot;tokenInSellTax&quot;: 0,
-            &quot;tokenInBuyTax&quot;: 0
+            &quot;tokenInBuyTax&quot;: 0,
+            &quot;tokenOutSellTax&quot;: 0,
+            &quot;tokenOutBuyTax&quot;: 0
         },
+        &quot;chainId&quot;: 56,
+        &quot;currentBlockNumber&quot;: &quot;38956072&quot;
     }
 }
 </code></pre>
